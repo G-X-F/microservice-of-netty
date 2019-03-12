@@ -1,0 +1,24 @@
+syntax = "proto2";
+package PB_MEUMX;
+option java_package = "big.pig.common.proto";
+
+//定义通用型消息体类名
+option java_outer_classname = "PbContact";
+
+//请求
+message Request
+{
+    required sint32 module = 1;//模块
+    required sint32 sub = 2;//子命令
+    optional bytes msg = 3;//数据
+}
+
+//响应
+message Response
+{
+    required sint32 module = 1;//模块
+    required sint32 sub = 2;//子命令
+    required sint32 code = 3;//响应码
+    optional bytes msg = 4;//数据
+}
+
